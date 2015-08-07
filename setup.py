@@ -16,6 +16,8 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     # TODO: put package requirements here
+    'click<5.0',
+    'docker-py>=1.3.1',
 ]
 
 test_requirements = [
@@ -35,6 +37,11 @@ setup(
     ],
     package_dir={'dockem':
                  'dockem'},
+    entry_points={
+        'console_scripts': [
+            'dockem = dockem.cli:main',
+        ]
+    },
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
