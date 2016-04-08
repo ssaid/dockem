@@ -27,7 +27,7 @@ def create_config_file():
     Config.set('Container', 'name', name)
     Config.set('Container', 'host', name)
     Config.set('Container', 'image', username + "/odoo_ubuntu:12.04")
-    Config.set('Container', 'volumes', 'Vol1, Vol2')
+    Config.set('Container', 'volumes', 'Vol1, Vol2, Vol3')
     Config.set('Container', 'remove', True)
     Config.set('Container', 'data_container', name + 'db')
     Config.set('Container', 'ports', 'Port1, Port2')
@@ -39,6 +39,9 @@ def create_config_file():
     Config.add_section('Vol2')
     Config.set('Vol2', 'localdir', '$HOME/.buildout/odoo7')
     Config.set('Vol2', 'containerdir', '/opt/buildout/parts/odoo')
+    Config.add_section('Vol3')
+    Config.set('Vol3', 'localdir', '$HOME/.buildout/dlcache')
+    Config.set('Vol3', 'containerdir', '/opt/buildout/dlcache')
 
     Config.add_section('Port1')
     Config.set('Port1', 'localport', '8069')

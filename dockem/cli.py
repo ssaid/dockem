@@ -71,7 +71,7 @@ def main(create_config, run, verbose):
         elif run:
             execute_container()
     except Exception, e:
-        click.echo(e)
+        click.echo(click.style(e, fg='red'))
         sys.exit(1)
 
 if __name__ == "__main__":  # pragma: no cover
